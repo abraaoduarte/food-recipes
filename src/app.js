@@ -18,7 +18,8 @@ Model.knex(knex);
 
 app.use(logger('tiny'));
 app.use(bodyParser());
-app.use(api());
+app.use(api.routes());
+app.use(api.allowedMethods());
 
 app.listen(3001, () => {
   console.log("Server listening on port: 127.0.0.1:3001");

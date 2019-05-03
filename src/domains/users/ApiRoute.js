@@ -7,6 +7,9 @@ const router = new Router({
 });
 
 router.get('/', User.index);
+router.post('/', User.create);
+router.put('/:id/update', User.update);
+router.delete('/:id/delete', User.delete);
 router.get('/:id', User.show);
 
 export default () => router.routes();
