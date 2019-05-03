@@ -7,5 +7,6 @@ const router = new Router({
 });
 
 router.get('/', User.index);
+router.get('/:id', User.show);
 
 export default () => router.routes();

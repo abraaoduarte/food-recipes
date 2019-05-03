@@ -9,6 +9,25 @@ class UserApiController {
     ctx.status = 200;
     ctx.body = users;
   }
+
+  static async show(ctx) {
+    const user = await User.query().findById(ctx.params.id);
+
+    if (!user) {
+      return ctx.body = {
+        message: 'Not found',
+        data: []
+      }
+    }
+
+    ctx.status = 200;
+    ctx.body = {
+      message: 'success',
+      data: user
+    };
+
+
+  }
 }
 
 export default UserApiController;
