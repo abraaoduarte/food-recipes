@@ -1,8 +1,8 @@
-###Features
+# Features
 
 -CRUD de Food Recipes
 
-###Technologies
+# Technologies
 
 - [x] Node
 - [x] Koa
