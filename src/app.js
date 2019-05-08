@@ -12,8 +12,6 @@ import { Model } from "objection";
 import api from "./routes/api";
 import auth from "./routes/auth";
 
-const { locker } = require("./auth");
-
 
 const app = new Koa();
 
@@ -27,11 +25,10 @@ app.use(helmet());
 app.use(cors());
 app.use(bodyParser());
 
-//app.use(auth.routes());
-//app.use(auth.allowedMethods());
-app.use(locker.api());
+app.use(auth.routes());
+app.use(auth.allowedMethods());
+
 app.use(api.routes());
-//app.use(api.routes());
 app.use(api.allowedMethods());
 
 app.listen(3001, () => {
